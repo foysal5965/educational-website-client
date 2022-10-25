@@ -1,0 +1,7 @@
+.email{
+    width: 500px;
+}
+.login{
+    display: flex;
+    justify-content: center;
+}

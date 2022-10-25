@@ -36,11 +36,13 @@ const Header = () => {
     <Link to="/navbars">
     Blog
     </Link>
+    <Link to='/login'>LOgin</Link>
     <Link to="/navbars">
       About Us
     </Link>
   </Navbar.Collapse>
 </Navbar>
+
         </div>
     );
 };
