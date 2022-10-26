@@ -1,49 +1,43 @@
 import React from 'react';
-import {Navbar} from "flowbite-react"
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link } from 'react-router-dom';
+import LeftSideNav from './LeftSideNav';
 const Header = () => {
     return (
-        <div>
-
-<Navbar
-  fluid={true}
-  rounded={true}
->
-  <Navbar to="https://flowbite.com/">
-    <img
-      src="https://img.freepik.com/free-vector/abstract-low-polygonal-graduation-cap-planet-earth-globe-model-map-e-learning-concept_127544-1106.jpg?size=626&ext=jpg&ga=GA1.2.1680277961.1665324040&semt=sph"
-      className="mr-3 h-6 sm:h-9 rounded-lg"
-      alt="Flowbite Logo"
-    />
-    <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
-      Apars Classroom
-    </span>
-  </Navbar>
-  <Navbar.Toggle />
-  <Navbar.Collapse>
-    <Link
-      to="/navbars"
-      active={true}
-    >
-      Home
-    </Link>
-    <Link to="/navbars">
-      FAQ
-    </Link>
-    <Link to="/navbars">
-      Courses
-    </Link>
-    <Link to="/navbars">
-    Blog
-    </Link>
-    <Link to='/login'>LOgin</Link>
-    <Link to="/navbars">
-      About Us
-    </Link>
-  </Navbar.Collapse>
-</Navbar>
-
-        </div>
+      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+      <Container>
+        <Navbar.Brand className='text-primary'>Apars Classroom</Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="me-auto">
+          <Nav.Link ><Link to='/home'>Home</Link></Nav.Link>
+            <Nav.Link ><Link to='/'>Courses</Link></Nav.Link>
+            <Nav.Link><Link to='/blog'>Blog</Link></Nav.Link>
+            <Nav.Link><Link to='faq'>FAQ</Link></Nav.Link>
+            <NavDropdown title="Course Names" className='d-lg-none' id="collasible-nav-dropdown">
+            
+              <NavDropdown.Item href="#action/3.2">
+               <LeftSideNav></LeftSideNav>
+              </NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+             
+           
+            </NavDropdown>
+          </Nav>
+          <Nav>
+            <Nav.Link href="#deets">More deets</Nav.Link>
+            <Nav.Link eventKey={2} href="#memes">
+              Dank memes
+            </Nav.Link>
+            <Link to='login'>Log in</Link>
+            <Link to='register'>Register</Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
     );
 };
 

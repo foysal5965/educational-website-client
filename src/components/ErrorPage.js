@@ -1,14 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+
 const ErrorPage = () => {
     return (
-        <section className='flex items-center w-25 p-16 bg-gray-100 text-gray-900'>
+     <div>
+      <section className='flex items-center h-screen p-auto bg-gray-100 text-gray-900'>
       <div className='container flex flex-col items-center justify-center px-5 mx-auto my-8'>
         <svg
           xmlns='http://www.w3.org/2000/svg'
           viewBox='0 0 512 512'
-          className='w-20 h-22 text-gray-600'
+          className='w-100 h-50 text-gray-600'
         >
           <path
             fill='currentColor'
@@ -39,13 +41,14 @@ const ErrorPage = () => {
           </p>
           <Link
             to='/'
-            className='p-10 font-semibold rounded bg-blue-600 text-white mt-5 '
+            className='px-8 py-3 font-semibold rounded bg-gray-900 hover:bg-gray-700 text-gray-100'
           >
             Back to homepage
           </Link>
         </div>
       </div>
     </section>
+     </div>
     );
 };
 
