@@ -4,6 +4,7 @@ import Form from 'react-bootstrap/Form';
 import {FaGoogle ,FaGithub} from 'react-icons/fa'
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../contexts/authprovider/AuthProvider';
+import Toast from 'react-bootstrap/Toast';
 const Register = () => {
     const {createUser,updateName, emailVerify}= useContext(AuthContext)
     const handleSubmit = event=>{
@@ -16,13 +17,13 @@ const Register = () => {
         createUser(email, password)
         .then(res=>{
             const user= res.user;
-            console.log(user);
+            // console.log(user);
         })
         updateName(name)
         .then(result=>{
             emailVerify()
             .then(res=>{
-
+            
             })
         })
         .catch(error=>console.log(error))

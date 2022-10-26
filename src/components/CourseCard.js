@@ -14,7 +14,7 @@ const CourseCard = ({course}) => {
         <Card.Text>
         {details.slice(0,100)}
         </Card.Text>
-        <Button variant="primary" >Show detail of the course</Button>
+        <Link variant="primary" to={`/courses/${_id}`}>Show detail of the course</Link>
       </Card.Body>
     </Card>
         </div>
