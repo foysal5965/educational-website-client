@@ -1,4 +1,5 @@
 import React from 'react';
+import { Col, Container, Row } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
@@ -8,8 +9,9 @@ const CourseCard = ({course}) => {
     const {title , details, image_url,_id}= course
     return (
         <div>
-          
- <Card className='mb-4 '> 
+   
+            
+            <Card className='mb-4 mt-5'> 
        <Card.Img variant="top" className='w-25 p-2' src={image_url} />
        
       <Card.Body >
@@ -20,6 +22,8 @@ const CourseCard = ({course}) => {
         <Link variant="primary" to={`/courses/${_id}`}>Show detail of the course</Link>
       </Card.Body>
     </Card>
+         
+ 
         </div>
     );
 };

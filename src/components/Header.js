@@ -32,7 +32,7 @@ const Header = () => {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link ><Link className='text-decoration-none text-white' to='/home'>Home</Link></Nav.Link>
-            <Nav.Link ><Link className='text-decoration-none text-white' to='/courses'>Courses</Link></Nav.Link>
+            <Nav.Link ><Link className='text-decoration-none text-white' to='/coursess'>Courses</Link></Nav.Link>
             <Nav.Link><Link className='text-decoration-none text-white' to='/blog'>Blog</Link></Nav.Link>
             <Nav.Link><Link className='text-decoration-none text-white' to='faq'>FAQ</Link></Nav.Link>
             <NavDropdown title="Course Names" className='d-lg-none' id="collasible-nav-dropdown">
@@ -62,7 +62,7 @@ const Header = () => {
 
 
                 : <>
-                  <Link to='/login' className='text-decoration-none mx-3 text-white '>Login</Link>
+                 <Link to='/login' className='text-decoration-none mx-3 text-white '>Login</Link>
                   <Link to='register' className='text-decoration-none text-white '>Register</Link>
                 </>}
                

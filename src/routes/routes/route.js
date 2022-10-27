@@ -9,6 +9,10 @@ import Course from "../../components/Course";
 import Blog from "../../components/Blog";
 import CheckOut from "../../components/CheckOut";
 import PrivetRoute from "./PrivetRoute";
+import Courses from "../../components/Courses";
+import CourseCard from "../../components/CourseCard";
+import LoaderSpinner from "../../components/LoaderSpinner";
+import LeftSideNav from "../../components/LeftSideNav";
 
 
 
@@ -51,9 +55,10 @@ const router = createBrowserRouter([
             path:'/blog',
             element:<Blog></Blog>
            },
-           {
-            path:'/courses'
-           }
+         {
+            path:'/coursess',
+            
+         }
          
            
 

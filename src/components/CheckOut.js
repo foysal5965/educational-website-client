@@ -8,7 +8,7 @@ const CheckOut = () => {
     const {user}= useContext(AuthContext)
     const {title, Fee, duration}=course
     return (
-       <div>
+       <div className='w-100'>
         {user?.uid?
         <>
          <Card style={{ width: '18rem' }} className='mx-auto mt-5'>
@@ -21,7 +21,7 @@ const CheckOut = () => {
           <p>Fee: {Fee}</p>
           <p>Congratulation you enrolled {title} course </p>
           </Card.Text>
-          <Card.Link ><Link to='/'>Back to homepage</Link></Card.Link>
+          <Card.Link ><Link to='/' className='text-decoration-none border'>Back to homepage</Link></Card.Link>
         
         </Card.Body>
       </Card>

@@ -11,15 +11,23 @@ const Main = () => {
         <div>
             <Header></Header>
             <Container>
+
                 <Row>
                     <Col lg='4' className='d-none d-lg-block'>
-                     <LeftSideNav></LeftSideNav>
+                    <LeftSideNav></LeftSideNav>
                     </Col>
-                    <Col lg='8'>
-                        <Outlet></Outlet>
+                    <Col>
+                    <Outlet></Outlet>
                     </Col>
                 </Row>
             </Container>
+    
+                    
+              
+                  
+
+            
+
         </div>
     );
 };
