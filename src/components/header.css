@@ -55,7 +55,7 @@
   }
   
   input:checked + .slider {
-    background-color: #19a2c1;
+    background-color:rgb(68, 219, 68);
   }
   
  .onchange:focus + .slider {

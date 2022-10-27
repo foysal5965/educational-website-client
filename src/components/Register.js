@@ -7,7 +7,7 @@ import { AuthContext } from '../contexts/authprovider/AuthProvider';
 
 import toast from 'react-hot-toast';
 const Register = () => {
-    const {createUser,updateName, emailVerify, signInWithGoogle}= useContext(AuthContext)
+    const {createUser,updateName, emailVerify, signInWithGoogle, githubSignIn}= useContext(AuthContext)
     const navigate = useNavigate()
     const location = useLocation()
     const from = location.state?.from?.pathname || '/'
@@ -39,7 +39,15 @@ const Register = () => {
     const handleGoogleSignIn =()=>{
         signInWithGoogle()
         .then(result=>{
-
+            navigate(from, { replace: true })
+        })
+      
+    }
+    const handleGithubSignIn=()=>{
+        githubSignIn()
+        .then(result=>{
+            toast.success('successfully logged in')
+            navigate(from, { replace: true })
         })
     }
     return (
@@ -82,7 +90,7 @@ const Register = () => {
           </p>
         <div className=' d-flex justify-content-center '>
         <FaGoogle  className='mx-3' style={{cursor:'pointer'}} onClick={handleGoogleSignIn}></FaGoogle>
-         <FaGithub className='me-2'></FaGithub>
+         <FaGithub className='me-2' style={{cursor:'pointer'}} onClick={handleGithubSignIn}></FaGithub>
         </div>
           <div className=''>Already have an account? <Link to='/login'>Signin</Link></div>
         </div>
