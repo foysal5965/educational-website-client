@@ -1,9 +1,9 @@
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 const Course = () => {
    const course = useLoaderData()
- const{details, image_url, title, duration, Fee, instructor}= course
+ const{details, image_url, title, duration, Fee, instructor,_id}= course
     return (
         <div>
            <Card className='mt-5 mx-5 shadow '> 
@@ -22,6 +22,7 @@ const Course = () => {
             <p className='mx-3'>{instructor.name}</p>
             <p className='mx-3'>{instructor.educational_qualification}</p>
         </Card.Text>
+       <Link to={`/course-enroll/${_id}`}>Go Premium</Link>
       </Card.Body>
     </Card>
         </div>

@@ -9,7 +9,7 @@ const LeftSideNav = () => {
         .then(data=>setCourseCategories(data))
     },[])
     return (
-        <div className='sticky-top'>
+        <div className='sticky-top mt-3'>
            <h1>Our All Courses </h1>
            {
             courseCategories.map(category=><nav className="navbar bg-light mt-5 ">

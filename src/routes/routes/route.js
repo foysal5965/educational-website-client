@@ -6,6 +6,8 @@ import Home from '../../components/Home'
 import Category from '../../components/Category'
 import Register from "../../components/Register";
 import Course from "../../components/Course";
+import Blog from "../../components/Blog";
+import CheckOut from "../../components/CheckOut";
 
 
 
@@ -36,8 +38,20 @@ const router = createBrowserRouter([
             loader:({params})=>fetch(`https://assignmnet-server.vercel.app/course/${params.id}`)
            },
            {
+            path:'/course-enroll/:id',
+            element:<CheckOut></CheckOut>,
+            loader:({params})=>fetch(`https://assignmnet-server.vercel.app/course/${params.id}`)
+           },
+           {
             path:'/register',
             element:<Register></Register>
+           },
+           {
+            path:'/blog',
+            element:<Blog></Blog>
+           },
+           {
+            path:'/courses'
            }
          
            

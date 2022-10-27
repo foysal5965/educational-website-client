@@ -2,11 +2,13 @@ import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
+import LeftSideNav from './LeftSideNav';
 
 const CourseCard = ({course}) => {
     const {title , details, image_url,_id}= course
     return (
         <div>
+          
  <Card className='mb-4 '> 
        <Card.Img variant="top" className='w-25 p-2' src={image_url} />
       <Card.Body >

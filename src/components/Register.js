@@ -4,9 +4,10 @@ import Form from 'react-bootstrap/Form';
 import {FaGoogle ,FaGithub} from 'react-icons/fa'
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../contexts/authprovider/AuthProvider';
-import Toast from 'react-bootstrap/Toast';
+
+import toast from 'react-hot-toast';
 const Register = () => {
-    const {createUser,updateName, emailVerify}= useContext(AuthContext)
+    const {createUser,updateName, emailVerify, signInWithGoogle}= useContext(AuthContext)
     const handleSubmit = event=>{
         event.preventDefault();
         const form = event.target;
@@ -23,11 +24,18 @@ const Register = () => {
         .then(result=>{
             emailVerify()
             .then(res=>{
-            
+            toast.success('check your email and verify')
             })
         })
-        .catch(error=>console.log(error))
+        .catch(error=>toast.error(error.message))
 
+     
+    }
+    const handleGoogleSignIn =()=>{
+        signInWithGoogle()
+        .then(result=>{
+
+        })
     }
     return (
         <div>
@@ -67,11 +75,11 @@ const Register = () => {
           <p className='text-muted text-center'>
             Signup with social accounts
           </p>
-        <div className='d-flex justify-content-center '>
-        <FaGoogle className='w-25'></FaGoogle>
-         <FaGithub></FaGithub>
+        <div className=' d-flex justify-content-center '>
+        <FaGoogle  className='mx-3' style={{cursor:'pointer'}} onClick={handleGoogleSignIn}></FaGoogle>
+         <FaGithub className='me-2'></FaGithub>
         </div>
-          <div className=''>Already have an account? <Link to='/login'>Signup</Link></div>
+          <div className=''>Already have an account? <Link to='/login'>Signin</Link></div>
         </div>
             
             </Form>
