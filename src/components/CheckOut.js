@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import { AuthContext } from '../contexts/authprovider/AuthProvider';
+import { FaUser } from 'react-icons/fa';
 const CheckOut = () => {
     const course = useLoaderData()
     const {user}= useContext(AuthContext)
@@ -16,6 +17,7 @@ const CheckOut = () => {
           
           <Card.Text>
           <p>duration: {duration}</p>
+      
           <p>Fee: {Fee}</p>
           <p>Congratulation you enrolled {title} course </p>
           </Card.Text>

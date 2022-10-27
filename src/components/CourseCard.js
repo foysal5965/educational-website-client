@@ -11,6 +11,7 @@ const CourseCard = ({course}) => {
           
  <Card className='mb-4 '> 
        <Card.Img variant="top" className='w-25 p-2' src={image_url} />
+       
       <Card.Body >
         <Card.Title>{title}</Card.Title>
         <Card.Text>

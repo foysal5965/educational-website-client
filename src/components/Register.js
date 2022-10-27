@@ -2,12 +2,15 @@ import React, { useContext } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import {FaGoogle ,FaGithub} from 'react-icons/fa'
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../contexts/authprovider/AuthProvider';
 
 import toast from 'react-hot-toast';
 const Register = () => {
     const {createUser,updateName, emailVerify, signInWithGoogle}= useContext(AuthContext)
+    const navigate = useNavigate()
+    const location = useLocation()
+    const from = location.state?.from?.pathname || '/'
     const handleSubmit = event=>{
         event.preventDefault();
         const form = event.target;
@@ -19,15 +22,17 @@ const Register = () => {
         .then(res=>{
             const user= res.user;
             // console.log(user);
-        })
-        updateName(name)
-        .then(result=>{
-            emailVerify()
-            .then(res=>{
-            toast.success('check your email and verify')
+            updateName(name)
+            .then(result=>{
+                emailVerify()
+                .then(res=>{
+                toast.success('check your email and verify')
+                navigate(from, { replace: true })
+                })
             })
+            .catch(error=>toast.error(error.message))
         })
-        .catch(error=>toast.error(error.message))
+
 
      
     }

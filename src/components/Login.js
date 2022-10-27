@@ -1,13 +1,16 @@
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../contexts/authprovider/AuthProvider';
 import toast from 'react-hot-toast';
 
 
 const Login = () => {
   const { signIn } = useContext(AuthContext);
+  const navigate = useNavigate()
+  const location = useLocation()
+  const from = location.state?.from?.pathname || '/'
   const handleSubmit = event => {
     event.preventDefault()
     const form = event.target;
@@ -16,7 +19,9 @@ const Login = () => {
     signIn(email, password)
       .then(result => {
         toast.success('success full login')
+        navigate(from, { replace: true })
       })
+      form.reset()
   }
 
   return (

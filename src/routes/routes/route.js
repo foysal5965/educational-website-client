@@ -8,6 +8,7 @@ import Register from "../../components/Register";
 import Course from "../../components/Course";
 import Blog from "../../components/Blog";
 import CheckOut from "../../components/CheckOut";
+import PrivetRoute from "./PrivetRoute";
 
 
 
@@ -39,7 +40,7 @@ const router = createBrowserRouter([
            },
            {
             path:'/course-enroll/:id',
-            element:<CheckOut></CheckOut>,
+            element:<PrivetRoute><CheckOut></CheckOut></PrivetRoute>,
             loader:({params})=>fetch(`https://assignmnet-server.vercel.app/course/${params.id}`)
            },
            {
